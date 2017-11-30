@@ -7,7 +7,9 @@ Requirements:
 
 -LiteDB packages installed in Visual Studio under Tools - NuGet Package Manager - Package Manager Console by running "Install-Package LiteDB". Additional information about LiteDB at http://www.litedb.org/
 
-How it works:
+
+How it works: 
+
 The TextBoxes (Customer Name, Type of Battery, Date of Purchase) allow you to Search for or Insert of customers.
 Search can be done with the input of data into one or multiple TextBoxes and pressing the Search button, 
 whereas Insert needs all TextBoxes filled to work.
