@@ -1,0 +1,51 @@
+﻿<Window x:Class="DB_SearchApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DB_SearchApp"
+        mc:Ignorable="d"
+        Title="TAB iskanje" Height="800" Width="635" ResizeMode="CanResizeWithGrip">
+    <Grid Background="LightCyan" Height="771" Margin="0,0,0,-0.333" VerticalAlignment="Bottom" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="110*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+        <Button Name="import_btn" Content="Import" Grid.Column="0" Grid.Row="3" Click="import_btn_Click"/>
+        <Button Name="save_btn" Content="Export" Grid.Column="1" Grid.Row="3" Click="save_btn_Click" Visibility="Visible"/>
+        <Button Name="search_btn" Content="Search" Grid.Column="0" Grid.Row="1" Click="search_btn_Click" Margin="0"/>
+        <Button Name="load_btn" Content="Show All" Grid.Column="1" Grid.Row="1" Click="load_btn_Click"/>
+        <Button Name="insert_btn" Content="Insert" Grid.Column="0" Grid.Row="2" Click="insert_btn_Click"/>
+        <Button Name="remove_btn" Content="Remove" Grid.Column="1" Grid.Row="2" Click="remove_btn_Click"/>
+
+        <Label Content="Customer Name" Grid.Column="2" Grid.Row="1"/>
+        <Label Content="Type of Battery" Grid.Column="2" Grid.Row="2"/>
+        <Label Content="Date Of Purchase" Grid.Column="2" Grid.Row="3"/>
+        <Label Name="lblNumber" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" FontWeight="Bold" Width="49"/>
+
+        <TextBox Name="searchName_tb" Grid.Column="3" Grid.Row="1" GotFocus="search_tb_GotFocus" FontWeight="Bold" FontSize="16" Foreground="Black" Text="MUL"/>
+        <TextBox Name="searchType_tb" Grid.Column="3" Grid.Row="2" GotFocus="searchType_tb_GotFocus" FontWeight="Bold" FontSize="16" Foreground="Black"/>
+        <TextBox Name="searchDates_tb" Grid.Column="3" Grid.Row="3" GotFocus="searchDates_tb_GotFocus"  FontWeight="Bold" FontSize="16" Foreground="Black"/>
+
+        <ListView x:Name="lvCustomers" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="6" Margin="0,0,0.333,-664.333" MouseDoubleClick="lvCustomers_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding CustomerID}" Width="50"/>
+                    <GridViewColumn Header="Customer Name" DisplayMemberBinding="{Binding FirstName_LastName}" Width="180"/>
+                    <GridViewColumn Header="Type Of Battery" DisplayMemberBinding="{Binding TypeOfBattery}" Width="180"/>
+                    <GridViewColumn Header="Date Of Purchase" DisplayMemberBinding="{Binding DateOfPurchase}" Width="180"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
