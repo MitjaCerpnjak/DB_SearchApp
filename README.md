@@ -2,6 +2,7 @@
 A simple C# WPF application to search through a local database (LiteDB - NoSQL) with addition of add/remove and import/export data option.
 
 Requirements:
+
 -Visual Studio, which can be downloaded at https://www.visualstudio.com/downloads/
 
 -LiteDB packages installed in Visual Studio under Tools - NuGet Package Manager - Package Manager Console by running "Install-Package LiteDB". Additional information about LiteDB at http://www.litedb.org/
